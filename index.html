@@ -44,12 +44,12 @@ const DIRV = [[0, 1], [-1, 0], [1, 0], [0, -1]];   // 0 아래, 1 왼쪽, 2 오�
 /* ================= 2. 데이터 ================= */
 const CHAPTERS = {};
 
-// 등장인물 색(도트 그래픽용)과 이름
+// 등장인물 색(도트 그래픽용)과 이름 (코드 이름 → 화면 이름: me=하늘, jieun=현심, taemin=정아, harin=서은)
 const CHARS = {
-  me:     { name: '나',        color: '#cfd8ff', hair: '#9a5a3a', skin: '#f0c8a0', body: '#e6e6ea', leg: '#3a5a9a' },
-  jieun:  { name: '지은',      color: '#ffb7c5', hair: '#d8703a', skin: '#f4d0ac', body: '#e6e6ea', leg: '#f4d0ac', long: 1, skirt: '#3a5a9a' },
-  taemin: { name: '태민',      color: '#9fe0a0', hair: '#4a8a9a', skin: '#f0c8a0', body: '#e6e6ea', leg: '#3a5a9a', spiky: 1 },
-  harin:  { name: '하린',      color: '#a8d8ff', hair: '#8a70c0', skin: '#f2ccaa', body: '#e6e6ea', leg: '#f2ccaa', bob: 1, skirt: '#3a5a9a' },
+  me:     { name: '하늘',      color: '#cfd8ff', hair: '#9a5a3a', skin: '#f0c8a0', body: '#e6e6ea', leg: '#3a5a9a' },
+  jieun:  { name: '현심',      color: '#ffb7c5', hair: '#d8703a', skin: '#f4d0ac', body: '#e6e6ea', leg: '#f4d0ac', long: 1, skirt: '#3a5a9a' },
+  taemin: { name: '정아',      color: '#9fe0a0', hair: '#4a8a9a', skin: '#f0c8a0', body: '#e6e6ea', leg: '#3a5a9a', spiky: 1 },
+  harin:  { name: '서은',      color: '#a8d8ff', hair: '#8a70c0', skin: '#f2ccaa', body: '#e6e6ea', leg: '#f2ccaa', bob: 1, skirt: '#3a5a9a' },
   yoon:   { name: '윤 선생님', color: '#d8c890', hair: '#8a8a8a', skin: '#e0c0a0', body: '#56565c', leg: '#34343a', tall: 1 },
   all:    { name: '모두',      color: '#ffffff' }
 };
@@ -91,7 +91,7 @@ CHAPTERS[1] = {
   goals: {
     light: '교실을 빠져나가자 (손전등부터)',
     exit: '교실을 빠져나가자',
-    toilet: '태민이를 찾으러 화장실로',
+    toilet: '정아를 찾으러 화장실로',
     sci: '과학실을 조사하자',
     music: '음악실에 들어가자',
     escape: '비상구로 빠져나가자',
@@ -129,7 +129,7 @@ CHAPTERS[1] = {
     talisman:   { name: '부적', desc: "'정서연' 사물함에 있던 부적. 쫓아오는 것에게 잡히는 순간 한 번 막아 준다." },
     plunger:    { name: '변기 뚫어뻥', desc: '화장실의 검은 손을 한 번 막아 준다. 아마도.' },
     recorder:   { name: '리코더', desc: "'3반 김OO'의 리코더. 피아노 소리를 한 번 덮을 수 있다." },
-    phone:      { name: '태민의 휴대폰', desc: '화장실 마지막 칸에 떨어져 있었다. 메모 앱이 켜져 있다.' },
+    phone:      { name: '정아의 휴대폰', desc: '화장실 마지막 칸에 떨어져 있었다. 메모 앱이 켜져 있다.' },
     prepKey:    { name: '과학 준비실 열쇠', desc: '과학실 안쪽 실험대 서랍에서 나온 열쇠.' },
     musicKey:   { name: '음악실 열쇠', desc: '준비실 책상에 놓여 있던 열쇠.' },
     portrait:   { name: '베토벤 초상화', desc: '음악실에서 뗀 초상화. 눈이 자꾸 마주친다.' },
@@ -146,12 +146,12 @@ CHAPTERS[1] = {
     senior1: { title: '선배 쪽지', font: 'SujinHand', lines: [
       '여기 수첩에 적어 둬.', '잡혀도 여기서 다시 시작할 수 있어.', '나도 그렇게 버텼어.', '- 선배가'] },
     graffiti: { title: '화장실 벽 낙서', font: 'MinjaeHand', lines: ['물 소리 나는 칸 앞으로', '지나가지 마'] },
-    phone: { title: '태민의 휴대폰 메모', font: 'mono', lines: [
+    phone: { title: '정아의 휴대폰 메모', font: 'mono', lines: [
       '교무실 금고에 정문 열쇠 있대.', '비번은 4자리. 괴담 하나마다', '숫자가 하나씩 숨겨져 있대.', '첫 번째는 4.',
       '물소리가 안 멈춰. 누가 칸 안에서', '내 이름 불러. 이거 보면 도망쳐'] },
     wet: { title: '젖은 쪽지', font: 'MinjaeHand', lines: ['인체 모형한테 등 보이면 다가옴.', 'Shift 누르고 뒤로 걸어.'],
       smudge: 2, after: '아랫글자는 물에 번져서 볼 수 없다.' },
-    jieun: { title: '지은의 쪽지', font: 'SujinHand', lines: [
+    jieun: { title: '현심의 쪽지', font: 'SujinHand', lines: [
       '두 번째 숫자는 1.', '음악실 열쇠는 여기 둘게.', '피아노가 멈추면', '절대 움직이지 마.'],
       smudge: 1, after: '아랫글자는 물에 번져서 볼 수 없다.' },
     sheet: { title: '악보 메모', font: 'SujinHand', lines: ['세 번째 숫자는 7.', '베토벤 선생님을', '원래 자리로 돌려드려.'] },
@@ -173,8 +173,8 @@ CHAPTERS[1] = {
      on: 화면 안에 보일 때, off: 화면 밖(문 너머)에 있을 때 */
   ghosts: {
     bunshin: { subj: '분신사바 귀신이', on: 1.19, onK: 0, off: 1.0, offK: 0 },
-    wet:     { subj: '젖은 태민이', on: 1.19, off: 1.0, prints: 1, dim: 1 },
-    jieun:   { subj: '지은이가', on: 1.19, off: 1.0, dim: 1, bubble: '나 여기 있어…' },
+    wet:     { subj: '젖은 정아가', on: 1.19, off: 1.0, prints: 1, dim: 1 },
+    jieun:   { subj: '현심이가', on: 1.19, off: 1.0, dim: 1, bubble: '나 여기 있어…' },
     // noLose: 멀리 도망쳐도 따돌릴 수 없다(숨어야 한다). 2차 추격 때만 현관 문을 쓸 수 있다.
     yoon:    { subj: '윤 선생님이', on: 1.19, off: 1.0, dim: 1, noLose: 1, doors: ['base', 'office'] },
     shadow:  { spd: 1.19, delay: 54 },
@@ -250,10 +250,10 @@ CHAPTERS[1] = {
       lockers: [
         { name: '나', item: 'flashlight', say: '내 사물함 체육복 밑에서 손전등을 찾았다.', say2: '내 사물함의 체육복은 지금 발효 중이다.', then: [{ t: 'goal', k: 'exit' }] },
         { name: '정서연', item: 'talisman', say: "'정서연' 사물함 깊숙한 곳에서 부적이 나왔다.", then: [['', '누가 이런 걸 학교에 두고 다니지…….']], say2: "'정서연' 사물함에서 향 냄새가 은은하게 난다." },
-        { name: '김태민', say: "'김태민' 사물함에서 축구화 냄새가 강렬하게 난다." },
+        { name: '김정아', say: "'김정아' 사물함에서 축구화 냄새가 강렬하게 난다." },
         { name: '오민지', say: "'오민지' 사물함엔 우유가 치즈가 되어 있다." },
-        { name: '이지은', say: "'이지은' 사물함의 '무서운 이야기 100선'은 99번째 장이 접혀 있다." },
-        { name: '서하린', say: "'서하린' 사물함은 정리가 너무 잘 돼 있어서 오히려 무섭다." }
+        { name: '이현심', say: "'이현심' 사물함의 '무서운 이야기 100선'은 99번째 장이 접혀 있다." },
+        { name: '한서은', say: "'한서은' 사물함은 정리가 너무 잘 돼 있어서 오히려 무섭다." }
       ],
       extra: [
         { t: 'save', x: 14, y: 1, w: 2, h: 2, wall: 1, id: 'sv_c23', say: "게시판의 '야자 도망자 명단'에 오늘은 내 이름도 올라가겠다." },
@@ -380,7 +380,7 @@ CHAPTERS[1] = {
       floor: '2층', w: 12, h: 10, style: 'lab', zone: 'sci', party: ['jieun'], rects: [[1, 3, 10, 7]],
       doors: [{ x: 2, y: 8, out: [0, -1], to: 'sci', tx: 2, ty: 3, td: 0, label: '과학실', ev: [['prepGot', '!prepSeen'], 'modelZoom'] }],
       objs: [
-        { t: 'cabinet2', x: 4, y: 1, w: 4, h: 2, wall: 1, say: '진열장 안에 인체 모형이 서 있다.', say2: '진열장 속 지은이 얼굴을 한 모형과 눈이 마주쳤다.' },
+        { t: 'cabinet2', x: 4, y: 1, w: 4, h: 2, wall: 1, say: '진열장 안에 인체 모형이 서 있다.', say2: '진열장 속 현심이 얼굴을 한 모형과 눈이 마주쳤다.' },
         { t: 'pdesk', x: 7, y: 5, w: 2, say: '준비실 책상 위에는 이제 먼지만 남았다.' },
         { t: 'shelf', x: 10, y: 3, w: 1, h: 2, say: "시약병 라벨이 전부 '만지지 마'다." }
       ]
@@ -570,7 +570,7 @@ CHAPTERS[1] = {
       { t: 'fade', v: 1, n: 40 }, { t: 'scene', name: null }, { t: 'call', fn: 'startMain' }, { t: 'fade', v: 0, n: 40 },
       ['', '가방 속 수첩이 손에 잡혔다. Tab으로 열 수 있다.']
     ],
-    // [2] 2층 복도: 태민이 혼자 화장실로
+    // [2] 2층 복도: 정아가 혼자 화장실로
     hallIntro: [
       { t: 'flag', k: 'hallIntro' },
       ['harin', '정문은 1층 현관 쪽이야. 계단부터 가자.'],
@@ -579,7 +579,7 @@ CHAPTERS[1] = {
       { t: 'unfollow', who: 'taemin' }, { t: 'move', who: 'taemin', x: 37, y: 4, spd: 1.7 }, { t: 'remove', who: 'taemin' },
       { t: 'silence' }, { t: 'wait', n: 120 },
       { t: 'screamFile', text: '아아악—' }, { t: 'wait', n: 30 },
-      ['jieun', '……방금, 태민이 목소리지?'],
+      ['jieun', '……방금, 정아 목소리지?'],
       ['harin', '1층 화장실 쪽이야. 가자.'],
       { t: 'goal', k: 'toilet' }
     ],
@@ -589,28 +589,28 @@ CHAPTERS[1] = {
     ],
     phone: [
       { t: 'sfx', n: 'item' }, { t: 'give', item: 'phone' }, { t: 'flag', k: 'phoneGot' },
-      ['', '마지막 칸 바닥에 태민의 휴대폰이 떨어져 있다. 화면이 켜져 있다.'],
+      ['', '마지막 칸 바닥에 정아의 휴대폰이 떨어져 있다. 화면이 켜져 있다.'],
       { t: 'note', id: 'phone' }, { t: 'digit', n: 1 },
       ['', '휴대폰 밑에 젖은 쪽지가 깔려 있다.'],
       { t: 'note', id: 'wet' },
       { t: 'call', fn: 'toiletDark' }
     ],
-    // [3] 1층 복도: 젖은 태민
+    // [3] 1층 복도: 젖은 정아
     wetTaemin: [
       { t: 'flag', k: 'toiletDone' },
-      ['jieun', '나왔다! ...태민이는?'],
+      ['jieun', '나왔다! ...정아는?'],
       ['', '(휴대폰을 내민다.)'],
-      ['harin', '......태민이 거잖아.'],
+      ['harin', '......정아 거잖아.'],
       { t: 'chase', kind: 'wet', x: 6, y: 4 },
       { t: 'silence' }, { t: 'wait', n: 100 },
-      ['jieun', '엇, 저기 태민이 아니야?'],
+      ['jieun', '엇, 저기 정아 아니야?'],
       ['harin', '다가가지 마. 잘 봐 봐, 전부 젖어 있어!'],
       { t: 'goal', k: 'sci' }
     ],
     // [4] 과학실
     sciIn: [
       { t: 'flag', k: 'sciIn' },
-      ['', '(하린은 복도에서 망을 보기로 했다.)'],
+      ['', '(서은은 복도에서 망을 보기로 했다.)'],
       ['jieun', '...근데 출구 옆 저 인체 모형, 원래 저기 있었나?'],
       ['jieun', '아, 기분 나빠. 자꾸 이쪽을 보는 것 같잖아.']
     ],
@@ -627,7 +627,7 @@ CHAPTERS[1] = {
       { t: 'scream', text: '꺄아악—', sfx: 'screamJ' }, { t: 'wait', n: 40 },
       { t: 'flag', k: 'jieunGone' }, { t: 'remove', who: 'jieun' }, { t: 'call', fn: 'modelWake' },
       { t: 'sfx', n: 'light' }, { t: 'fade', v: 0, n: 20 },
-      ['', '(......지은이가 없다.)']
+      ['', '(......현심이가 없다.)']
     ],
     prepDesk: [
       { t: 'sfx', n: 'item' }, { t: 'flag', k: 'prepGot' },
@@ -638,19 +638,19 @@ CHAPTERS[1] = {
       { t: 'flag', k: 'prepSeen' }, { t: 'silence' }, { t: 'wait', n: 60 },
       { t: 'fade', v: 1, n: 20 }, { t: 'scene', name: 'model' }, { t: 'fade', v: 0, n: 50 }, { t: 'wait', n: 60 },
       ['', '(진열장 속 인체 모형 옆에, 모형이 하나 더 서 있다.)'],
-      ['', '(......지은이와 똑같은 얼굴이다.)'],
+      ['', '(......현심이와 똑같은 얼굴이다.)'],
       { t: 'fade', v: 1, n: 30 }, { t: 'scene', name: null }, { t: 'map', map: 'sci', x: 2, y: 3, dir: 0 }, { t: 'fade', v: 0, n: 20 }
     ],
-    // [5] 2층 복도: 귀신이 된 지은
+    // [5] 2층 복도: 귀신이 된 현심
     sciOut: [
       { t: 'flag', k: 'sciDone' },
-      ['harin', '...지은이는? 같이 나온 거 아니었어?'],
-      ['me', '......지은이는 인체 모형한테 당했어.'],
+      ['harin', '...현심이는? 같이 나온 거 아니었어?'],
+      ['me', '......현심이는 인체 모형한테 당했어.'],
       ['harin', '......음악실로 가자. 이번엔 내가 같이 갈게.'],
       { t: 'goal', k: 'music' },
       { t: 'silence' }, { t: 'wait', n: 100 },
       { t: 'chase', kind: 'jieun', x: 15, y: 4 }, { t: 'sfx', n: 'voiceJ' }, { t: 'wait', n: 70 },
-      ['harin', '......지은아?']
+      ['harin', '......현심아?']
     ],
     // [6] 음악실
     musicIn: [
@@ -733,7 +733,7 @@ CHAPTERS[1] = {
       { t: 'sfx', n: 'moktak', a: 0.35 }, { t: 'chase', kind: 'yoon', x: 30, y: 4, freeze: 50 }, { t: 'wait', n: 30 },
       ['yoon', '어디 가니. 잠시 면담 좀 하자.']
     ],
-    // [11] 운동장: 하린이 학교로 돌아간다 → 선택지
+    // [11] 운동장: 서은이 학교로 돌아간다 → 선택지
     yardTalk: [
       { t: 'flag', k: 'yardTalk' },
       ['harin', '헐, 내일 수행평가 자료 두고 왔다. 나 금방 다녀올게.'],
@@ -742,12 +742,12 @@ CHAPTERS[1] = {
       { t: 'unfollow', who: 'harin' }, { t: 'move', who: 'harin', x: 14, y: 2, spd: 1.6 }, { t: 'remove', who: 'harin' }, { t: 'flag', k: 'harinGone' },
       { t: 'silence' }, { t: 'wait', n: 60 },
       { t: 'sfx', n: 'moktak', a: 0.1 }, { t: 'wait', n: 45 }, { t: 'sfx', n: 'moktak', a: 0.12 }, { t: 'wait', n: 45 }, { t: 'sfx', n: 'moktak', a: 0.14 }, { t: 'wait', n: 50 },
-      { t: 'choice', opts: [['하린을 따라간다', 'follow'], ['정문으로 간다', 'gate']] },
-      // --- 하린을 따라간다: BAD END ---
+      { t: 'choice', opts: [['서은을 따라간다', 'follow'], ['정문으로 간다', 'gate']] },
+      // --- 서은을 따라간다: BAD END ---
       { t: 'label', id: 'follow' },
       { t: 'fade', v: 1, n: 50 }, { t: 'scene', name: 'harinbad' }, { t: 'sv', k: 'turn', v: 0 }, { t: 'fade', v: 0, n: 70 }, { t: 'wait', n: 60 },
-      ['', "(교실 책상에서 하린이 혼자 분신사바를 하고 있다. 종이에는 '같이 하자'.)"],
-      ['me', '하린...? 자료 찾았으면 이제 가자.'],
+      ['', "(교실 책상에서 서은이 혼자 분신사바를 하고 있다. 종이에는 '같이 하자'.)"],
+      ['me', '서은...? 자료 찾았으면 이제 가자.'],
       { t: 'silence' }, { t: 'wait', n: 110 },
       { t: 'sv', k: 'turn', v: 1 }, { t: 'sfx', n: 'jump' }, { t: 'shake', n: 10 }, { t: 'wait', n: 60 },
       ['me', '헉, 얼굴이!'],
@@ -771,10 +771,10 @@ CHAPTERS[1] = {
       { t: 'wait', n: 40 },
       { t: 'card', lines: ['다음 날 아침.'], color: '#222222', n: 150, fout: 30 },
       { t: 'call', fn: 'morning' }, { t: 'fade', v: 0, n: 80, color: '#ffffff' },
-      ['', '(교실 문을 열자, 반 아이들이 평소처럼 떠들고 있다. 지은, 태민, 하린도.)'],
+      ['', '(교실 문을 열자, 반 아이들이 평소처럼 떠들고 있다. 현심, 정아, 서은도.)'],
       ['taemin', '야 어제 너 왜 혼자 먼저 갔냐? 의리 없네.'],
       ['harin', '어제? 야자 끝나고 바로 집에 갔잖아. ……우리 넷이 같이.'],
-      ['', '(지은은 말없이 웃고 있다. 평소처럼.)'],
+      ['', '(현심은 말없이 웃고 있다. 평소처럼.)'],
       ['', '(분명 어젯밤, 아무도 돌아오지 못했는데.)'],
       ['', '(모두가 아무 일 없었다는 얼굴이다. ...나만 이상하다.)'],
       { t: 'actor', who: 'yoon', x: 2, y: 12, dir: 3 }, { t: 'sfx', n: 'door' }, { t: 'move', who: 'yoon', x: 2, y: 5, spd: 0.7 },
@@ -786,7 +786,7 @@ CHAPTERS[1] = {
       { t: 'anim', k: 'zoom', n: 70 }, { t: 'wait', n: 40 }, { t: 'anim', k: 'smile', n: 170 },
       { t: 'silence' }, { t: 'wait', n: 100 },
       { t: 'fade', v: 1, n: 60, color: '#000000' },
-      { t: 'card', lines: ['2장에서 계속'], color: '#dddddd', key: 1, stop: 1, hint: 'Space: 타이틀로' },
+      { t: 'card', lines: ['2장에서 계속', 'thanks for heoseong'], color: '#dddddd', key: 1, stop: 1, hint: 'Space: 타이틀로' },
       { t: 'call', fn: 'toTitle' }
     ]
   }
@@ -1718,7 +1718,7 @@ const SCENES = {
       g.restore(); if (red > 0) R('rgba(120,0,0,' + (red * 0.18) + ')', 0, 0, W, H);
     }
   },
-  // 배드엔딩: 교실에서 혼자 분신사바를 하는 하린
+  // 배드엔딩: 교실에서 혼자 분신사바를 하는 서은
   harinbad: {
     draw() {
       R('#0c0c12', 0, 0, W, H); R('#1a1a22', 0, 0, W, 70); R('#12241c', 150, 10, 180, 46); R('#1c2434', 30, 14, 70, 40); R('#1c2434', 380, 14, 70, 40);
@@ -1810,7 +1810,7 @@ function threatDist() {
   return d;
 }
 
-/* ---- 복도형 추격자(분신사바 귀신, 젖은 태민, 지은, 윤 선생님) ---- */
+/* ---- 복도형 추격자(분신사바 귀신, 젖은 정아, 현심, 윤 선생님) ---- */
 // bubble: 이번 추격에서만 쓰는 말풍선(없으면 귀신 기본값). 예) 마지막 운동장 분신사바 귀신 '같이 놀자..'
 function spawnChaser(kind, px, py, freeze, bubble) {
   const gd = CH.ghosts[kind], bb = bubble || gd.bubble;
@@ -1852,7 +1852,7 @@ function updateChaser() {
       if (G.frame % 58 === 0) { sfx('knock', pan); G.shake = 6; }   // 두드릴 때 화면이 흔들린다
     } else if (c.walk % 22 === 0) sfx('gstep', pan, G.hide ? 0.5 : clamp(0.4 - dd / 700, 0.03, 0.4));
     if (gd.prints && c.t % 13 === 0) G.prints.push({ map: c.map, x: c.x, y: c.y, life: 300 });
-    // 말풍선: 지은은 4.5초마다, 분신사바 귀신은 짧은 추격이라 3.3초마다
+    // 말풍선: 현심은 4.5초마다, 분신사바 귀신은 짧은 추격이라 3.3초마다
     const bp = c.kind === 'jieun' ? [270, 150] : [200, 90];
     if (c.bubble && c.t % bp[0] === bp[1]) { c.bub = 130; if (!G.hide) sfx(c.kind === 'jieun' ? 'voiceJ' : 'voiceB'); }
   }
@@ -2140,7 +2140,7 @@ const STEPS = {
     start(s) { if (EV.skip) return true; sfx(s.sfx); G.scream = { text: s.text, t: 100 }; },
     update() { return !G.scream; }, finish() { G.scream = null; }
   },
-  screamFile: { // 태민 비명: 파일이 실제로 재생되기 시작한 순간에 글자 표시
+  screamFile: { // 정아 비명: 파일이 실제로 재생되기 시작한 순간에 글자 표시
     start(s, c) {
       if (EV.skip) return true;
       c.shown = false; const el = AU.screamEl;
@@ -2339,7 +2339,7 @@ function updateWorld() {
   const tx = Math.floor(P.x / T), ty = Math.floor(P.y / T);
   // 2차 추격: 숨어서 선생님을 따돌린 뒤 현관 쪽으로 가면(자판기를 지나서) 다시 나타난다
   if (S.map === 'f1' && F.yoonHid && !F.yoon2 && !G.chaser && tx >= 47) { runEvent(CH.events.yoon2, 'yoon2'); return; }
-  // 운동장 한가운데쯤에서 하린과의 대화
+  // 운동장 한가운데쯤에서 서은과의 대화
   if (S.map === 'yard' && !F.yardTalk && ty >= 9) { runEvent(CH.events.yardTalk, 'yardTalk'); return; }
   // 정문 앞까지 도망치면 정문 열쇠로 열고 1장 끝
   if (S.map === 'yard' && F.gateRun && !F.endingSeen && ty >= 18 && tx >= 12 && tx <= 17) runEvent(CH.events.gateEnd, 'gateEnd');
@@ -2589,7 +2589,7 @@ function drawHUD(c) {
     c.font = '8px ' + CFG.uiFont; const w = c.measureText(lb).width + 6;
     box(c, sx - w / 2, sy - 9, w, 11, 'rgba(8,8,14,.85)', '#777'); txt(c, lb, sx, sy, 8, st0.to === 'f2' ? '#a0f0b0' : '#f0c080', 'center');
   }
-  // 지은 말풍선
+  // 현심 말풍선
   const ch = G.chaser;
   if (chaserVisible(ch) && ch.bub > 0) {
     const sx = ch.x - G.camX, sy = ch.y - G.camY - 24, tx = ch.bubble;
